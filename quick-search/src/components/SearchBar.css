@@ -1,53 +1,67 @@
 .search {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10rem;
-   
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rem;
 }
-.search-input{
-    width: 30rem;
-    height: 3.2rem;
-    display: flex;
-    background-color: rgba(51, 51, 51, 0.665);
-    border: none;
-    border-radius: 0.2rem;
-    font-size: 1.2rem;
-
+.search-input {
+  width: 30rem;
+  height: 3.2rem;
+  display: flex;
+  background-color: black;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  border: 1px solid black;
+  padding: 2px;
+  min-width: 500px;
 }
 .search-input input {
-    width: 27rem;
-    height: 3.2rem;
-    padding: 0.6rem;
-    border: none;
-    border-radius: 0.1rem;
-    font-size: 1.2rem;
+  width: 27rem;
+  height: 3.2rem;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0;
+  font-size: 1.2rem;
 }
 ::placeholder {
-font-size: 0.9rem;
-font-style: italic;
+  font-size: 0.9rem;
+  font-style: monospace;
+  color: black;
 }
 input:focus {
-    outline: none;
+  outline: none;
 }
 .search-icon {
-    display: flex;
-    align-items: center;
-    margin-left: 0.8rem;
-    font-weight: 700;
-    color: white; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+.search-icon p {
+  margin-left: 15px;
 }
 .input-result {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 23rem;
-    height: 3rem;
-    background-color: #ffff;
-    margin-top: 2rem;
-    color: black;
-    text-align: center;
-    font-weight: 550;
-    font-size: 1.3rem;
-    border: none
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23rem;
+  height: 3rem;
+  background-color: #ffff;
+  margin-top: 2rem;
+  color: black;
+  text-align: center;
+  font-weight: 550;
+  font-size: 1.3rem;
+  border: none;
+}
+.input-result > p {
+  width: 100%;
+}
+.input-result > p em {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

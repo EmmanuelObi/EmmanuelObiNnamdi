@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { a } from "../sampleData";
 import { cleanInputValue, pathGet } from "../utilities/helpers";
 import "./SearchBar.css";
-// import { BsSearch } from "react-icons/bs";
-// import { a } from "../data";
-// import { cleanInputValue, pathGet } from "../utilities";
 
 const SearchBar = ({ placeholder }) => {
   const [inputValue, setInputValue] = useState("");
@@ -15,13 +12,22 @@ const SearchBar = ({ placeholder }) => {
     if (path === "") {
       return " ";
     } else if (path === undefined) {
-      return "No path found";
+      return (
+        <>
+          <p>No path found</p>
+        </>
+      );
     } else {
-      return path;
+      return (
+        <>
+          <p>Result:</p>
+          <span>{path}</span>
+        </>
+      );
     }
   };
 
-  const handleClick = () => {
+  const handleSearchClick = () => {
     let newValue = cleanInputValue(inputValue);
     let searchResult = pathGet(a, newValue);
     if (newValue === "") {
@@ -50,9 +56,8 @@ const SearchBar = ({ placeholder }) => {
           value={inputValue}
           onChange={handleChange}
         />
-        <div className="search-icon" onClick={handleClick}>
-          {/* <BsSearch /> */}
-          Search
+        <div className="search-icon" onClick={handleSearchClick}>
+          <p>Search</p>
         </div>
       </div>
       {display ? (

@@ -1,10 +1,13 @@
+import { Dataset } from "../models/models";
+
 export const cleanInputValue = (inputValue: string) => {
   let newInput = inputValue.toLowerCase();
   const result = newInput.charAt(0).toUpperCase() + newInput.slice(1);
   return result;
 };
 
-export const pathGet = (a: any, query: string) => {
+export const pathGet = (a: Dataset, query: string) => {
+  // forgive all the following any keywords, no time to ensure all types
   const findKeyInObj = (val: any) => {
     const result: any = {};
     for (const key in val) {
