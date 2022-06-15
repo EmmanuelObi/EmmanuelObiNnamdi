@@ -8,7 +8,7 @@ const SearchBar = ({ placeholder }) => {
   const [path, setPath] = useState("");
   const [display, setDisplay] = useState(false);
 
-  const value = () => {
+  const result = () => {
     if (path === "") {
       return " ";
     } else if (path === undefined) {
@@ -28,6 +28,9 @@ const SearchBar = ({ placeholder }) => {
   };
 
   const handleSearchClick = () => {
+    if (inputValue === "") {
+      return;
+    }
     let newValue = cleanInputValue(inputValue);
     let searchResult = pathGet(a, newValue);
     if (newValue === "") {
@@ -63,7 +66,7 @@ const SearchBar = ({ placeholder }) => {
       {display ? (
         <div className="input-result">
           <p>
-            <em>{value()}</em>
+            <em>{result()}</em>
           </p>
         </div>
       ) : (
